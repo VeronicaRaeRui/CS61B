@@ -59,8 +59,12 @@ public class LinkedListDequeTest {
 		System.out.println("Printing out deque: ");
 		lld1.printDeque();
 		lld2.printDeque();
+		System.out.println("Printing get(0)");
 		System.out.println(lld1.get(0));
+		System.out.println("Printing getRecursive(0)");
+		System.out.println(lld1.getRecursive(0));
 		System.out.println(lld1.get(2));
+		System.out.println(lld1.getRecursive(2));
 
 		printTestStatus(passed);
 

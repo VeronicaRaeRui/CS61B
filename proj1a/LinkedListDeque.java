@@ -131,6 +131,30 @@ public class LinkedListDeque <Item>{
         return p.item;
     }
 
+    public Item getRecursive(int index)
+    {
+        if(index >= this.size)
+        {
+            return null;
+        }
+        else
+        {
+            return recursiveHelper( sentinel.next, index ).item;
+        }
 
+
+    }
+
+    public IntNode recursiveHelper( IntNode node, int index  )
+    {
+        if(index ==0)
+        {
+            return node;
+        }
+        else
+        {
+            return recursiveHelper(node.next, index-1);
+        }
+    }
 
 }

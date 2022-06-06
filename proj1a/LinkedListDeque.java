@@ -1,4 +1,4 @@
-public class LinkedListDeque <Item>{
+public class LinkedListDeque <T>{
 
     private IntNode sentinel;
     private int size;
@@ -6,7 +6,7 @@ public class LinkedListDeque <Item>{
 
     public class IntNode {
          public IntNode prev;
-         public Item item;
+         public T item;
          public IntNode next;
 
          public IntNode() {
@@ -15,7 +15,7 @@ public class LinkedListDeque <Item>{
              next = null;
          }
 
-        public IntNode(Item _item, IntNode _prev, IntNode _next) {
+        public IntNode(T _item, IntNode _prev, IntNode _next) {
             item = _item;
             prev = _prev;
             next = _next;
@@ -48,7 +48,7 @@ public class LinkedListDeque <Item>{
     }
 
 
-    public void addFirst( Item item ) {
+    public void addFirst( T item ) {
         IntNode p = this.sentinel.next;
         sentinel.next = new IntNode( item, sentinel, p);
         p.prev = sentinel.next;
@@ -56,7 +56,7 @@ public class LinkedListDeque <Item>{
 
     }
 
-    public void addLast( Item item )
+    public void addLast( T item )
     {
         IntNode p = this.sentinel.prev;
         sentinel.prev = new IntNode(item,p ,sentinel );
@@ -87,7 +87,7 @@ public class LinkedListDeque <Item>{
 
     }
 
-    public Item removeFirst()
+    public T removeFirst()
     {
         if(size == 0)
         {
@@ -101,7 +101,7 @@ public class LinkedListDeque <Item>{
         return first.item;
     }
 
-    public Item removeLast()
+    public T removeLast()
     {
 
         if(size == 0)
@@ -115,7 +115,7 @@ public class LinkedListDeque <Item>{
         return last.item;
     }
 
-    public Item get(int index)
+    public T get(int index)
     {
         if(index >= this.size)
         {
@@ -131,7 +131,7 @@ public class LinkedListDeque <Item>{
         return p.item;
     }
 
-    public Item getRecursive(int index)
+    public T getRecursive(int index)
     {
         if(index >= this.size)
         {

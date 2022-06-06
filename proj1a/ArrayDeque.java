@@ -81,7 +81,8 @@ public class ArrayDeque <T>{
         }
 
         size--;
-        return items[nextFirst++];
+        nextFirst++;
+        return items[nextFirst];
     }
 
 
@@ -102,7 +103,8 @@ public class ArrayDeque <T>{
             resize(0.5F);
         }
         size--;
-        return items[nextLast--];
+        nextLast--;
+        return items[nextLast];
     }
 
     public T get( int index)

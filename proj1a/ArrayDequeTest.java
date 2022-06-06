@@ -97,11 +97,13 @@ public class ArrayDequeTest {
         lld2.printDeque();
         lld1.printDeque();
 
+        System.out.println("remove first");
+        System.out.println(lld1.removeFirst());
         lld1.removeFirst();
         lld1.printDeque();
         lld1.removeFirst();
         lld1.printDeque();
-        lld1.removeFirst();
+
         lld1.printDeque();
         lld1.removeLast();
         lld1.removeLast();

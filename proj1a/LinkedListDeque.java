@@ -4,18 +4,18 @@ public class LinkedListDeque <T>{
     private int size;
 
 
-    public class IntNode {
-         public IntNode prev;
-         public T item;
-         public IntNode next;
+    private class IntNode {
+          IntNode prev;
+          T item;
+          IntNode next;
 
-         public IntNode() {
+          IntNode() {
              item = null;
              prev = null;
              next = null;
          }
 
-        public IntNode(T _item, IntNode _prev, IntNode _next) {
+         IntNode(T _item, IntNode _prev, IntNode _next) {
             item = _item;
             prev = _prev;
             next = _next;

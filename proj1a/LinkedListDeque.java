@@ -33,7 +33,8 @@ public class LinkedListDeque <T>{
 
     }
 
-    public LinkedListDeque( LinkedListDeque other )
+    /**
+    public LinkedListDeque( LinkedListDeque<T> other )
     {
         sentinel = new IntNode( );
         size = other.size();
@@ -46,7 +47,7 @@ public class LinkedListDeque <T>{
             p = p.prev;
         }
     }
-
+    */
 
     public void addFirst( T item ) {
         IntNode p = this.sentinel.next;
@@ -145,7 +146,7 @@ public class LinkedListDeque <T>{
 
     }
 
-    public IntNode recursiveHelper( IntNode node, int index  )
+    private IntNode recursiveHelper( IntNode node, int index  )
     {
         if(index ==0)
         {

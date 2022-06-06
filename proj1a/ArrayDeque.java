@@ -12,7 +12,7 @@ public class ArrayDeque <T>{
         nextFirst = 2;
         nextLast = 3;
     }
-
+    /**
     public ArrayDeque( ArrayDeque other)
     {
         this.nextFirst = other.nextFirst;
@@ -23,7 +23,9 @@ public class ArrayDeque <T>{
 
     }
 
-    public void resize(float factor)
+     */
+
+    private void resize(float factor)
     {
         T[] oldItems = items;
         items = (T[]) new Object[ Math.round(oldItems.length * factor)];
@@ -75,6 +77,10 @@ public class ArrayDeque <T>{
 
     public T removeFirst()
     {
+        if(size == 0)
+        {
+            return null;
+        }
         if(items.length>=16 && ((float)(size-1)/(float)items.length) <0.25)
         {
             resize(0.5F);
@@ -98,6 +104,10 @@ public class ArrayDeque <T>{
 
     public T removeLast()
     {
+        if(size == 0)
+        {
+            return null;
+        }
         if(items.length>=16 && ((float)(size-1)/(float)(items.length)) <0.25)
         {
             resize(0.5F);
@@ -113,7 +123,6 @@ public class ArrayDeque <T>{
         {
             return null;
         }
-
         return items[nextFirst+1+index];
     }
 

@@ -1,12 +1,11 @@
-public class ArrayDeque <T>{
+public class ArrayDeque<T> {
 
     private T[] items;
     private int size;
     private int nextFirst;
     private int nextLast;
 
-    public ArrayDeque()
-    {
+    public ArrayDeque() {
         items = (T[]) new Object[8];
         size = 0;
         nextFirst = 2;
@@ -30,7 +29,7 @@ public class ArrayDeque <T>{
         T[] oldItems = items;
         items = (T[]) new Object[ Math.round(oldItems.length * factor)];
 
-        int startIndex = Math.round(oldItems.length*factor/4);
+        int startIndex = Math.round(oldItems.length * factor / 4);
 
         System.arraycopy(oldItems,nextFirst+1,items,startIndex,size );
 
@@ -42,7 +41,7 @@ public class ArrayDeque <T>{
 
     public void addFirst (T item)
     {
-        if(nextFirst==0)
+        if (nextFirst == 0)
         {
             resize(2);
         }
@@ -55,7 +54,7 @@ public class ArrayDeque <T>{
 
     public void addLast (T item)
     {
-        if(nextLast == items.length)
+        if (nextLast == items.length)
         {
             resize(2);
         }
@@ -67,7 +66,7 @@ public class ArrayDeque <T>{
 
     public boolean isEmpty()
     {
-        return size==0;
+        return size == 0;
     }
 
     public int size()
